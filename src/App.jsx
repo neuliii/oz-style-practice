@@ -1,10 +1,9 @@
-import "./App.scss";
+
 import { contents } from "./assets/data/data";
 import Content from "./components/Content";
 import Header from "./components/Header";
-import styled from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 import { flexMixin } from "./styled/styled";
-
 
 
 const SectionStyled = styled.section`
@@ -12,9 +11,23 @@ const SectionStyled = styled.section`
   padding: 20px 40px;
 `;
 
+const GlobalStyled = createGlobalStyle`
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+  body {
+    background-color: #121212;
+  }
+`;
+
 function App() {
   return (
     <main>
+    <GlobalStyled />
       <Header />
       <SectionStyled>
         {contents.map((el) => (

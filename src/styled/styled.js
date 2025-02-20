@@ -19,7 +19,7 @@ export const flexMixin = ({
 };
 
 export const fontMixin = ({
-    size, 
+    size= '20px', 
     weight= "400"
 }
 ) => {
